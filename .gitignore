@@ -1,5 +1,6 @@
 # c
 *.so
+new_publisher
 
 # python
 __pycache__
@@ -9,3 +10,6 @@ build
 
 # pycharm
 .idea
+
+#uv
+uv.lock

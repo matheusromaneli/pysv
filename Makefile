@@ -7,7 +7,16 @@ build: $(C_CODE)
 
 .PHONY: run
 run:
-	sudo PYSV_INTERFACE="enp0s31f6" nice -n -20 .venv/bin/python -m pysv -debug
+	sudo PYSV_INTERFACE="lo" nice -n -20 .venv/bin/python -m pysv -debug
+
+.PHONY: thread
+thread:
+	sudo PYSV_INTERFACE="lo" nice -n -20 .venv/bin/python -m pysv -thread
+
+.PHONY: multiprocess
+m: multiprocess
+multiprocess:
+	sudo PYSV_INTERFACE="lo" nice -n -20 .venv/bin/python -m pysv -multiprocess
 
 .PHONY: clean
 clean: $(C_NAME)
